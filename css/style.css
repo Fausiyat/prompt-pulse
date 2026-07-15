@@ -1,0 +1,694 @@
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --bg-dark: #09090e;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --text-muted: #cbd5e1;
+    --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   2. GLASSMORPHISM & UTILITIES
+   ========================================================================== */
+.glass-nav {
+    background: rgba(9, 9, 14, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-glass);
+    transition: var(--transition-smooth);
+}
+
+.glass-nav.scrolled {
+    background: rgba(9, 9, 14, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   3. NAVIGATION
+   ========================================================================== */
+.navbar {
+    padding: 20px 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+    color: var(--text-primary) !important;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero {
+    position: relative;
+    padding: 180px 0 100px;
+    background: radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    display: block;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 540px;
+}
+
+/* Hero Cards Visualization */
+.hero-card {
+    position: relative;
+    height: 400px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.mini-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    padding: 20px;
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+}
+
+.mini-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.mini-card i {
+    font-size: 2rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 20px;
+}
+
+.mini-card h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.mini-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   5. FEATURES SECTION
+   ========================================================================== */
+#features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#features p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: var(--transition-smooth);
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.feature-card h4 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   6. CTA SECTION
+   ========================================================================== */
+.cta {
+    padding: 100px 0;
+    background: linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.05)),
+                radial-gradient(circle at center, rgba(168, 85, 247, 0.1) 0%, transparent 60%);
+    border-top: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.cta h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+footer {
+    padding: 60px 0;
+    background: #050508;
+    border-top: 1px solid var(--border-glass);
+    color: var(--text-muted);
+}
+
+footer h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+footer i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+footer i:hover {
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   8. BUTTONS
+   ========================================================================== */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline-light {
+    border: 1px solid var(--border-glass);
+    background: transparent;
+    padding: 12px 30px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-primary);
+    transform: scale(1.05);
+}
+
+.btn-light {
+    padding: 12px 30px;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+}
+
+.btn-light:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+/* ==========================================================================
+   9. PHASE 2: WORKSPACE & PREVIEW CSS
+   ========================================================================== */
+.bg-primary-soft {
+    background-color: rgba(99, 102, 241, 0.15);
+}
+.text-primary-light {
+    color: #a5b4fc;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.workspace-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 30px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+/* Platform Selectors */
+.btn-platform {
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    transition: var(--transition-smooth);
+}
+
+.btn-platform:hover, .btn-platform.active {
+    background: var(--primary-gradient);
+    color: var(--text-primary);
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Textareas */
+.workspace-textarea, .workspace-textarea-sm {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid var(--border-glass) !important;
+    color: var(--text-primary) !important;
+    border-radius: 12px;
+    resize: none;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.workspace-textarea {
+    height: 140px;
+}
+
+.workspace-textarea-sm {
+    height: 80px;
+}
+
+.workspace-textarea:focus, .workspace-textarea-sm:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Previews */
+.preview-container {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    min-height: 180px;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+    overflow-y: auto;
+    max-height: 220px;
+}
+
+/* Platform Previews Styling */
+.preview-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.preview-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+}
+
+.preview-content {
+    white-space: pre-line;
+    word-break: break-word;
+}
+
+.prompt-block {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #6366f1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* AI Insights */
+.insight-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+}
+
+.insight-stat {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.extra-small {
+    font-size: 0.75rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+/* Boost Workspace Labels */
+#workspace .form-label {
+    color: #cbd5e1 !important; /* Brighter slate-gray for input labels */
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+}
+
+/* Character Counter */
+#charCounter {
+    color: #e2e8f0 !important; /* Brighter off-white */
+    font-weight: 500;
+}
+
+/* AI Insights Header & Subtext */
+.insight-panel .fw-bold {
+    color: #ffffff !important;
+}
+
+.insight-panel .text-muted.extra-small {
+    color: #94a3b8 !important; /* Promoted to a much brighter gray for readability */
+}
+/* ==========================================================================
+   10. PHASE 3: ANALYTICS DASHBOARD CSS
+   ========================================================================== */
+.analytics-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.chart-container {
+    height: 220px;
+    position: relative;
+}
+
+.trending-item {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+
+.trending-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateX(5px);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.badge-rank {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-gradient);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.border-glass {
+    border-color: var(--border-glass) !important;
+}
+/* ==========================================================================
+   11. PHASE 4: SOCIAL PROOF, PRICING, FAQ & NEWSLETTER
+   ========================================================================== */
+/* Testimonials */
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.highlit-border {
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.stars i {
+    font-size: 0.85rem;
+    margin-right: 2px;
+}
+
+/* Pricing */
+.pricing-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+    transition: var(--transition-smooth);
+    height: 100%;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+}
+
+.pricing-card.featured {
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.02) 100%);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.15);
+}
+
+.text-muted-soft {
+    color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* FAQ Accordion overrides to match styling */
+.glass-accordion {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid var(--border-glass) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+/* Add this rule to your CSS to target FAQ answers specifically */
+.glass-accordion .accordion-body {
+    color: #f1f5f9 !important; /* Extremely bright slate-white for maximum readability */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.2); /* Slightly darkens the background of the open panel for contrast */
+}
+.glass-accordion .accordion-button {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 20px;
+}
+
+.glass-accordion .accordion-button:not(.collapsed) {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-bottom: 1px solid var(--border-glass) !important;
+}
+
+.glass-accordion .accordion-button::after {
+    filter: invert(1); /* Flip default button arrows to match dark UI */
+}
+
+/* Newsletter Box */
+.newsletter-box {
+    background: radial-gradient(circle at center, rgba(168, 85, 247, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+    border: 1px solid var(--border-glass);
+    border-radius: 24px;
+}
+/* Social Media Preview Text Colors */
+.preview-content {
+    color: #f1f5f9 !important; /* Vibrant slate-white for body text */
+}
+
+.preview-content p {
+    color: #f1f5f9 !important;
+}
+
+/* The actual Prompt Block (code-style block) */
+.prompt-block {
+    background: rgba(255, 255, 255, 0.08) !important; /* Slightly higher contrast container */
+    color: #ffffff !important; /* Pure white for the code text */
+    border-left: 3px solid #818cf8;
+}
+
+/* Medium specific article layout text */
+.preview-content p.text-white-50 {
+    color: #e2e8f0 !important; /* Upgraded Medium preview text contrast */
+}
+/* ==========================================================================
+   12. PHASE 5: POLISH, MOBILE ADJUSTMENTS, SCROLLBARS
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 2px solid var(--bg-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.4);
+}
+
+/* Active Nav Link Styling */
+.nav-link.active {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+}
+
+/* Mobile Responsiveness Improvements */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(9, 9, 14, 0.95);
+        border: 1px solid var(--border-glass);
+        border-radius: 16px;
+        padding: 20px;
+        margin-top: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .cta h2 {
+        font-size: 2.2rem;
+    }
+}
+/* Boost semi-transparent white text utility classes */
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.75) !important; /* Boosted from 50% to 75% opacity */
+}
+
+.text-muted-soft {
+    color: rgba(255, 255, 255, 0.4) !important; /* Boosted from 20% to 40% opacity */
+}
+/* Textarea Content and Placeholders */
+.workspace-textarea, .workspace-textarea-sm {
+    color: #ffffff !important; /* Pure white text when typing */
+    font-size: 1rem;
+}
+
+.workspace-textarea::placeholder, .workspace-textarea-sm::placeholder {
+    color: #64748b !important; /* Much brighter, distinct placeholder text */
+}
+
+/* Enhanced Focus State */
+.workspace-textarea:focus, .workspace-textarea-sm:focus {
+    border-color: #818cf8 !important; /* Lighter indigo border on focus */
+    background: rgba(0, 0, 0, 0.5) !important; /* Slightly darker background on active focus for contrast */
+    box-shadow: 0 0 15px rgba(129, 140, 248, 0.25) !important;
+}
