@@ -7,7 +7,7 @@ Project 1: PromptPulse — View Live App
 
 Project 2: DeepSync AI — View Live App
 
-# The Prompt Engineering Pipeline (How It Was Built)
+# The Prompt Engineering Pipeline (How It Was Built):
 As a Machine Learning Engineer, my goal was to treat a Large Language Model (LLM) as a deterministic code compiler. The development followed a structured, multi-phase execution pipeline:
 
 ## Plaintext
