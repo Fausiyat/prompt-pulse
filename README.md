@@ -26,10 +26,10 @@ As a Machine Learning Engineer, my goal was to treat a Large Language Model (LLM
 [ Phase 4: Interactive Micro-Interaction Injector ] ─► Compiles JS Event Listeners & Modals
 
 # Project Breakdowns
-# 1. PromptPulse
+## 1. PromptPulse
 A high-fidelity creator workspace designed for prompt engineers to draft, optimize, and preview structured prompts in real-time across major platforms.
 
-# Core Features:
+### Core Features:
 
 Platform Preview Grid: Instantly renders styled post previews matching the typographic constraints of X , LinkedIn, and Medium.
 
@@ -39,10 +39,10 @@ Dynamic Dark/Glass UI: Engineered with custom CSS variables, glassmorphism layer
 
 Tech Stack: HTML5, CSS3 (Custom Gradients & Glassmorphism), Bootstrap 5, Bootstrap Icons, JavaScript (ES6+ for interactive state tracking).
 
-# 2. DeepSync AI
+## 2. DeepSync AI
 A sleek, conversion-optimized landing page for an autonomous calendar guardian designed to protect cognitive bandwidth and schedule deep-work blocks.
 
-# Core Features:
+### Core Features:
 
 Interactive OAuth Simulation: A custom-built glassmorphic modal workflow that mimics connecting to Google or Outlook Calendar.
 
